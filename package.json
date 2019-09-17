@@ -8,6 +8,10 @@
     "Brian Maule (https://github.com/mauleb)",
     "Josh Hooton (https://github.com/shvagen)"
   ],
+  "keywords": [
+    "jbknowledge",
+    "eslint"
+  ],
   "homepage": "https://github.com/JBKLabs/eslint-config",
   "bugs": {
     "url": "https://github.com/JBKLabs/eslint-config/issues"
