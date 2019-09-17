@@ -1,14 +1,24 @@
 {
   "name": "@jbknowledge/eslint-config",
   "version": "0.0.7",
-  "description": "",
+  "description": "JBKnowledge ESLint Configuration",
   "main": "index.js",
   "bin": "index.js",
-  "author": "",
-  "license": "ISC",
+  "authors": [
+    "Brian Maule (https://github.com/mauleb)",
+    "Josh Hooton (https://github.com/shvagen)"
+  ],
+  "homepage": "https://github.com/JBKLabs/eslint-config",
+  "bugs": {
+    "url": "https://github.com/JBKLabs/eslint-config/issues"
+  },
+  "license": "Apache-2.0",
   "scripts": {
     "lint": "eslint ."
   },
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
     "babel-eslint": "10.0.3",
     "eslint": "6.4.0",
