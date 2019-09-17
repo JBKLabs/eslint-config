@@ -1,0 +1,24 @@
+{
+  "name": "@jbknowledge/eslint-config",
+  "version": "0.0.7",
+  "description": "",
+  "main": "index.js",
+  "bin": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "babel-eslint": "10.0.3",
+    "eslint": "6.4.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-import-resolver-babel-module": "5.1.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.14.3"
+  },
+  "eslintConfig": {
+    "extends": ["./index.js"]
+  }
+}
