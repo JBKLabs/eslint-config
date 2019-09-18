@@ -222,15 +222,15 @@ const items = [
 <a name="variables--no-hoisting"></a><a name="1.1"></a>
 - [1.1](#variables--no-hoisting) **No Hoisting**: When working with variables, you should pay close attention to the scope in which they are defined. eslint: [block-scoped-var](https://eslint.org/docs/rules/block-scoped-var)
 
-```js
-function doTryCatch() {
-    try {
-        var build = 1;
-    } catch (e) {
-        var f = build;
-    }
-}
-```
+  ```js
+  function doTryCatch() {
+      try {
+          var build = 1;
+      } catch (e) {
+          var f = build;
+      }
+  }
+  ```
 
 >while hoisting is valid javascript, it can lead to confusion about where variables are coming from.
 
@@ -249,11 +249,15 @@ function doTryCatch() {
 <a name="conditionals--1tbs"></a><a name="4.1"></a>
 - [4.1](#conditionals--1tbs) **All conditionals should follow 1tbs**: All conditional blocks should be wrapped in braces for readability and error prevention. More information can be found [here](https://en.wikipedia.org/wiki/Indentation_style). eslint: [curly](https://eslint.org/docs/rules/curly), [brace-style](https://eslint.org/docs/rules/brace-style)
 
-```js
-if (true) {
-  doSomething();
-}
-```
+  ```js
+  if (true) {
+    doSomething();
+  }
+  ```
+
+### Testing
+
+**Strive for 100% test coverage**: Tests should be written for all components. Aim to write many small, pure functions that are testable, and minimize side-effects. Whenever you fix a bug, *write a regression test*. A bug fixed without a regression test is almost certainly going to break again in the future.
 
 ## Contributors
 
