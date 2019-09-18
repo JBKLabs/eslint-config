@@ -18,3 +18,4 @@ rules:
   array-element-newline: [error, consistent]
   brace-style: [error, 1tbs, { allowSingleLine: false }]
   eol-last: [error, always]
+  id-length: error
