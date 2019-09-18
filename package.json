@@ -25,7 +25,8 @@
     "lint": "eslint ."
   },
   "files": [
-    "index.js"
+    "index.js",
+    "config"
   ],
   "dependencies": {
     "babel-eslint": "10.0.3",
