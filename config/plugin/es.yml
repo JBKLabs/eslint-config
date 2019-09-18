@@ -1,0 +1,6 @@
+plugins: es
+rules:
+  # objects
+  es/no-object-assign: error
+  es/no-keyword-properties: error
+  es/no-trailing-commas: error

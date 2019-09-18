@@ -1,4 +1,7 @@
 rules:
+  # objects
+  dot-notation: error
+  # --
   array-callback-return: error
   block-scoped-var: error
   class-methods-use-this: error
@@ -7,7 +10,6 @@ rules:
   default-case: error
   default-param-last: error
   dot-location: [error, property]
-  dot-notation: error
   eqeqeq: [error, always]
   max-classes-per-file: [error, 1]
   no-alert: error

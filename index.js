@@ -3,14 +3,15 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true,
+    es6: true, 
   },
   extends: [
     'eslint:recommended',
     './config/possible-errors.yml',
     './config/best-practices.yml',
     './config/variables.yml',
-    './config/stylistic.yml'
+    './config/stylistic.yml',
+    './config/plugin/es.yml' 
   ],
   settings: {
     'import/resolver': {
