@@ -3,26 +3,13 @@ const readPkgUp = require('read-pkg-up');
 
 const { package: pkg } = readPkgUp.sync({ cwd: fs.realpathSync(process.cwd()) });
 
-const includeIfInstalled = (depName, configPath) => {
-	const installed = [
-		name => pkg.peerDependencies && pkg.peerDependencies[name],
-		name => pkg.dependencies && pkg.dependencies[name],
-		name => pkg.devDependencies && pkg.devDependencies[name]
-	].some(fn => fn(depName));
-
-	if (installed) {
-		// eslint-disable-next-line no-console
-		console.log(`${depName} is installed. Loading additional config...`);
-		return configPath;
-	}
-
-	return '';
-};
-
-const conditionalExtensions = [
-	includeIfInstalled('prettier', './config/plugin/prettier.yml'),
-	includeIfInstalled('react', './config/plugin/react.yml')
-];
+const includeIfInstalled = (depName, ifTrue, ifFalse) => [
+	name => pkg.peerDependencies && pkg.peerDependencies[name],
+	name => pkg.dependencies && pkg.dependencies[name],
+	name => pkg.devDependencies && pkg.devDependencies[name]
+].some(fn => fn(depName))
+	? ifTrue
+	: ifFalse;
 
 module.exports = {
 	root: true,
@@ -38,9 +25,10 @@ module.exports = {
 		'./config/variables.yml',
 		'./config/stylistic.yml',
 		'./config/plugin/es.yml',
-		...conditionalExtensions
+		includeIfInstalled('prettier', './config/plugin/prettier.yml', ''),
+		includeIfInstalled('react', './config/plugin/react.yml', '')
 	],
-	settings: {
+	settings: includeIfInstalled('babel-plugin-module-resolver', {
 		'import/resolver': {
 			'babel-module': {
 				alias: {
@@ -49,7 +37,7 @@ module.exports = {
 				}
 			}
 		}
-	},
+	}, {}),
 	plugins: ['jsx-a11y', 'import'],
 	parser: 'babel-eslint',
 	rules: {
