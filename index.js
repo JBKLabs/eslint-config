@@ -1,3 +1,29 @@
+const fs = require('fs');
+const readPkgUp = require('read-pkg-up');
+
+const { package: pkg } = readPkgUp.sync({ cwd: fs.realpathSync(process.cwd()) });
+
+const includeIfInstalled = (depName, configPath) => {
+	const installed = [
+		name => pkg.peerDependencies && pkg.peerDependencies[name],
+		name => pkg.dependencies && pkg.dependencies[name],
+		name => pkg.devDependencies && pkg.devDependencies[name]
+	].some(fn => fn(depName));
+
+	if (installed) {
+		// eslint-disable-next-line no-console
+		console.log(`${depName} is installed. Loading additional config...`);
+		return configPath;
+	}
+
+	return '';
+};
+
+const conditionalExtensions = [
+	includeIfInstalled('prettier', './config/plugin/prettier.yml'),
+	includeIfInstalled('react', './config/plugin/react.yml')
+];
+
 module.exports = {
 	root: true,
 	env: {
@@ -11,7 +37,8 @@ module.exports = {
 		'./config/best-practices.yml',
 		'./config/variables.yml',
 		'./config/stylistic.yml',
-		'./config/plugin/es.yml'
+		'./config/plugin/es.yml',
+		...conditionalExtensions
 	],
 	settings: {
 		'import/resolver': {
@@ -21,26 +48,13 @@ module.exports = {
 					src: './src'
 				}
 			}
-		},
-		react: { version: 'detect' }
+		}
 	},
-	plugins: [
-		'jsx-a11y',
-		'react',
-		'import'
-	],
+	plugins: ['jsx-a11y', 'import'],
 	parser: 'babel-eslint',
 	rules: {
 		'jsx-a11y/media-has-caption': 0,
-		'react/no-danger': 0,
-		'react/prefer-stateless-function': 0,
-		'react/require-default-props': 0,
-		'react/no-unused-prop-types': 2,
-		'react/jsx-filename-extension': [ 1, { extensions: [ '.js', '.jsx' ]}],
 		'implicit-arrow-linebreak': 0,
-		'react/jsx-first-prop-new-line': 0,
-		'react/jsx-props-no-spreading': 0,
-		'react/no-array-index-key': 0,
 		'linebreak-style': 0,
 		'function-paren-newline': 0,
 		'no-underscore-dangle': 0,
@@ -50,16 +64,15 @@ module.exports = {
 			{
 				'newlines-between': 'always',
 				groups: [
-					[ 'builtin', 'external' ],
+					['builtin', 'external'],
 					'internal',
-					[
-						'parent',
-						'sibling',
-						'index'
-					]
+					['parent', 'sibling', 'index']
 				]
 			}
 		],
-		'no-multiple-empty-lines': [ 'error', { max: 1 }]
+		'no-multiple-empty-lines': [
+			'error',
+			{ max: 1 }
+		]
 	}
 };

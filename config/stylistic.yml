@@ -3,33 +3,19 @@ rules:
   no-new-object: error
   quote-props: [error, as-needed]
   no-useless-computed-key: error
-  object-curly-newline: [error, {
-    multiline: true,
-    minProperties: 3
-  }]
-  object-curly-spacing: [error, always, {
-    arraysInObjects: false,
-    objectsInObjects: false,
-  }]
-  key-spacing: [error, { 
-    beforeColon: false, 
-    afterColon: true,
-    mode: strict
-  }]
+  object-curly-newline: [error, { multiline: true }]
+  object-curly-spacing:
+    [error, always, { arraysInObjects: false, objectsInObjects: false }]
+  object-property-newline: [error, { allowAllPropertiesOnSameLine: true }]
+  key-spacing: [error, { beforeColon: false, afterColon: true, mode: strict }]
   comma-spacing: [error, { before: false, after: true }]
   comma-dangle: [error, never]
   indent: [error, tab]
   no-trailing-spaces: error
   no-array-constructor: error
   max-len: [error, { code: 80 }]
-  # --
   array-bracket-newline: [error, { multiline: true }]
-  array-bracket-spacing: [error, always, { 
-    singleValue: false,
-    objectsInArrays: false,
-    arraysInArrays: false
-  }]
-  array-element-newline: [error, { multiline: true, minItems: 3 }]
-  # --
+  array-bracket-spacing: [error, never]
+  array-element-newline: [error, consistent]
   brace-style: [error, 1tbs, { allowSingleLine: false }]
   eol-last: [error, always]
