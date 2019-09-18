@@ -42,7 +42,6 @@ module.exports = {
     'linebreak-style': 0,
     'function-paren-newline': 0,
     'no-underscore-dangle': 0,
-    'max-len': 0,
     'import/prefer-default-export': 0,
     'import/order': ['error', {
       'newlines-between': 'always',
