@@ -143,6 +143,29 @@ const b = {
 };
 ```
 
+**Prefer destructuring**: [prefer-destructuring](https://eslint.org/docs/rules/prefer-destructuring)
+
+```js
+// bad
+function getFullName(user) {
+  const firstName = user.firstName;
+  const lastName = user.lastName;
+
+  return `${firstName} ${lastName}`;
+}
+
+// good
+function getFullName(user) {
+  const { firstName, lastName } = user;
+  return `${firstName} ${lastName}`;
+}
+
+// best
+function getFullName({ firstName, lastName }) {
+  return `${firstName} ${lastName}`;
+}
+```
+
 ### Arrays
 
 **Use array literals**: [no-array-constructor](https://eslint.org/docs/rules/no-array-constructor)
@@ -216,6 +239,17 @@ const items = [ a, b ];
 const items = [
   a, b, c, d
 ];
+```
+
+**Prefer destructuring**: [prefer-destructuring](https://eslint.org/docs/rules/prefer-destructuring)
+
+```js
+// bad
+const first = arr[0];
+const second = arr[1];
+
+// good
+const [first, second] = arr;
 ```
 
 ### Variables
