@@ -1,0 +1,44 @@
+rules:
+  dot-notation: error
+  array-callback-return: error
+  block-scoped-var: error
+  class-methods-use-this: error
+  consistent-return: error
+  curly: [error, all]
+  default-case: error
+  default-param-last: error
+  dot-location: [error, property]
+  eqeqeq: [error, always]
+  max-classes-per-file: [error, 1]
+  no-alert: error
+  no-caller: error
+  no-else-return: [error, { allowElseIf: true }]
+  no-eval: error
+  no-extend-native: error
+  no-extra-bind: error
+  no-floating-decimal: error
+  no-implicit-coercion: [error, { allow: [ '!!' ]}]
+  no-implied-eval: error
+  no-invalid-this: error
+  no-labels: error
+  no-lone-blocks: error
+  no-loop-func: error
+  no-multi-spaces: error
+  no-multi-str: error
+  no-new-wrappers: error
+  no-param-reassign: error
+  no-proto: error
+  no-redeclare: error
+  no-return-assign: error
+  no-return-await: error
+  no-script-url: error
+  no-self-compare: error
+  no-sequences: error
+  no-throw-literal: error
+  no-useless-catch: error
+  no-useless-concat: error
+  no-useless-return: error
+  no-void: error
+  prefer-regex-literals: error
+  radix: error
+  require-await: error

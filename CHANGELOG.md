@@ -6,4 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- conditionally applied prettier rule set
+- conditionally applied react rule set
+- initial style guide
 - initial eslint configuration
