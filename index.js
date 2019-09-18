@@ -3,12 +3,12 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true, 
+    es6: true,
   },
   extends: [
     'eslint:recommended',
     './config/possible-errors.yml',
-    './config/best-practices.yml',
+    './config/best-practices.yml', 
     './config/variables.yml',
     './config/stylistic.yml',
     './config/plugin/es.yml' 
@@ -22,11 +22,13 @@ module.exports = {
         },
       },
     },
-    react: {
-      version: 'detect',
-    },
+    react: { version: 'detect', },
   },
-  plugins: ['jsx-a11y', 'react', 'import'],
+  plugins: [
+ 'jsx-a11y',
+'react',
+'import' 
+],
   parser: 'babel-eslint',
   rules: {
     'jsx-a11y/media-has-caption': 0,
@@ -34,7 +36,7 @@ module.exports = {
     'react/prefer-stateless-function': 0,
     'react/require-default-props': 0,
     'react/no-unused-prop-types': 2,
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': [ 1, { extensions: [ '.js', '.jsx' ]}],
     'implicit-arrow-linebreak': 0,
     'react/jsx-first-prop-new-line': 0,
     'react/jsx-props-no-spreading': 0,
@@ -43,14 +45,21 @@ module.exports = {
     'function-paren-newline': 0,
     'no-underscore-dangle': 0,
     'import/prefer-default-export': 0,
-    'import/order': ['error', {
+    'import/order': [
+ 'error',
+{
       'newlines-between': 'always',
       groups: [
-        ['builtin', 'external'],
+        [ 'builtin', 'external' ],
         'internal',
-        ['parent', 'sibling', 'index'],
+        [
+ 'parent',
+'sibling',
+'index' 
+],
       ],
-    }],
-    'no-multiple-empty-lines': ['error', { max: 1 }],
+    }
+],
+    'no-multiple-empty-lines': [ 'error', { max: 1 }],
   },
 };
