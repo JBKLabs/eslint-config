@@ -1,0 +1,9 @@
+rules:
+  prefer-const: [error, { 
+    destructuring: all,
+    ignoreReadBeforeAssign: true
+  }]
+  no-const-assign: error
+  no-var: error
+  object-shorthand: [error, always]
+  prefer-destructuring: error
