@@ -12,11 +12,9 @@ rules:
     objectsInObjects: false,
   }]
   key-spacing: [error, { 
-    align: {
-      beforeColon: false, 
-      afterColon: true,
-      mode: strict
-    }
+    beforeColon: false, 
+    afterColon: true,
+    mode: strict
   }]
   comma-spacing: [error, { before: false, after: true }]
   comma-dangle: [error, never]
