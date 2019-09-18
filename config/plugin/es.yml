@@ -1,4 +1,5 @@
-plugins: es
+plugins: 
+  - es
 rules:
   # objects
   es/no-object-assign: error

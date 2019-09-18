@@ -47,6 +47,18 @@ if (x) {
 }
 ```
 
+**Always declare one variable per line** [one-var](https://eslint.org/docs/rules/one-var)
+
+```js
+// bad
+let foo = true,
+    bar = false;
+
+// good
+let foo = true;
+let bar = false;
+```
+
 ### Objects
 
 **Use object literal**: [no-new-object](https://eslint.org/docs/rules/no-new-object)
@@ -115,7 +127,7 @@ const x = foo.bar;
 const y = foo[z]; // z is variable making square-brackets required
 ```
 
-**Give objects room to breathe**: Large objects should be split into multiple lines. Small objects should be padded with whitespace. [object-curly-newline]()
+**Give objects room to breathe**: Large objects should be split into multiple lines. Small objects should be padded with whitespace. [object-curly-newline](https://eslint.org/docs/rules/object-curly-newline), [object-curly-spacing](https://eslint.org/docs/rules/object-curly-spacing), [key-spacing](https://eslint.org/docs/rules/key-spacing), [comma-spacing](https://eslint.org/docs/rules/comma-spacing)
 
 ```js
 // bad
@@ -133,6 +145,78 @@ const b = {
 
 ### Arrays
 
+**Use array literals**: [no-array-constructor](https://eslint.org/docs/rules/no-array-constructor)
+
+```js
+// bad
+const items = new Array();
+
+// good
+const items = [];
+```
+
+**Use array spreads to copy**:
+
+```js
+// bad
+for(i = 0; i < original.length; i += 1) {
+  copy[i] = original[i];
+}
+
+// good
+const copy = [ ...original ];
+```
+
+**Use Array#push or the spread operator to append arrays**
+
+```js
+// bad
+items[items.length] = 1;
+
+// good
+items.push(1);
+const newItems = [...items, 1 ];
+```
+
+**Use return statements in array method callbacks**: [array-callback-return](https://eslint.org/docs/rules/array-callback-return)
+
+```js
+// bad
+[1, 2, 3].map((x) => {
+  doSomething(x);
+});
+
+// good
+[1, 2, 3].map(x => doSomething(x));
+[1, 2, 3].map((x) => {
+  const y = doSomething(x);
+  return doSomethingElse(y);
+});
+```
+
+**Do not declare sparse arrays**: [no-sparse-arrays](https://eslint.org/docs/rules/no-sparse-arrays)
+
+```js
+// bad
+const items = [,,'blue'];
+
+// good
+const items = ['blue'];
+```
+
+**Give arrays room to breathe**: [array-bracket-newline](https://eslint.org/docs/rules/array-bracket-newline), [array-bracket-spacing](https://eslint.org/docs/rules/array-bracket-spacing), [array-element-newline](https://eslint.org/docs/rules/array-element-newline), [comma-spacing](https://eslint.org/docs/rules/comma-spacing)
+
+```js
+// bad
+const items = [a,b];
+const items = [ a, b, c, d ];
+
+// good
+const items = [ a, b ];
+const items = [
+  a, b, c, d
+];
+```
 
 ### Variables
 <a name="variables--no-hoisting"></a><a name="1.1"></a>
