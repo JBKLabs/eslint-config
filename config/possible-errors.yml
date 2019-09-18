@@ -1,0 +1,4 @@
+rules:
+  no-console: error
+  no-extra-parens: [error, all, { ignoreJSX: multi-line }]
+  no-template-curly-in-string: error

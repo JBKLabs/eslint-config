@@ -5,7 +5,13 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['airbnb'],
+  extends: [
+    'eslint:recommended',
+    './config/possible-errors.yml',
+    './config/best-practices.yml',
+    './config/variables.yml',
+    './config/stylistic.yml'
+  ],
   settings: {
     'import/resolver': {
       'babel-module': {
