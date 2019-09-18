@@ -6,3 +6,4 @@ rules:
   no-const-assign: error
   no-var: error
   object-shorthand: [error, always]
+  prefer-destructuring: error
