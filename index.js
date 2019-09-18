@@ -43,8 +43,6 @@ module.exports = {
     'function-paren-newline': 0,
     'no-underscore-dangle': 0,
     'max-len': 0,
-    curly: ['error', 'all'],
-    'brace-style': ['error', '1tbs', { allowSingleLine: false }],
     'import/prefer-default-export': 0,
     'import/order': ['error', {
       'newlines-between': 'always',
@@ -54,7 +52,6 @@ module.exports = {
         ['parent', 'sibling', 'index'],
       ],
     }],
-    'object-curly-newline': 0,
     'no-multiple-empty-lines': ['error', { max: 1 }],
   },
 };
