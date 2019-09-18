@@ -13,7 +13,6 @@ rules:
   indent: [error, tab]
   no-trailing-spaces: error
   no-array-constructor: error
-  max-len: [error, { code: 80 }]
   array-bracket-newline: [error, { multiline: true }]
   array-bracket-spacing: [error, never]
   array-element-newline: [error, consistent]
