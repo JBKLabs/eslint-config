@@ -1,9 +1,9 @@
 module.exports = {
   root: true,
-  env: {
+  env : {
     browser: true,
-    node: true,
-    es6: true, 
+    node   : true,
+    es6    : true, 
   },
   extends: [
     'eslint:recommended',
@@ -22,35 +22,40 @@ module.exports = {
         },
       },
     },
-    react: {
-      version: 'detect',
-    },
+    react: {version: 'detect',},
   },
-  plugins: ['jsx-a11y', 'react', 'import'],
-  parser: 'babel-eslint',
-  rules: {
-    'jsx-a11y/media-has-caption': 0,
-    'react/no-danger': 0,
+  plugins: [ 'jsx-a11y',
+'react',
+'import' ],
+  parser : 'babel-eslint',
+  rules  : {
+    'jsx-a11y/media-has-caption'     : 0,
+    'react/no-danger'                : 0,
     'react/prefer-stateless-function': 0,
-    'react/require-default-props': 0,
-    'react/no-unused-prop-types': 2,
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    'implicit-arrow-linebreak': 0,
-    'react/jsx-first-prop-new-line': 0,
-    'react/jsx-props-no-spreading': 0,
-    'react/no-array-index-key': 0,
-    'linebreak-style': 0,
-    'function-paren-newline': 0,
-    'no-underscore-dangle': 0,
-    'import/prefer-default-export': 0,
-    'import/order': ['error', {
+    'react/require-default-props'    : 0,
+    'react/no-unused-prop-types'     : 2,
+    'react/jsx-filename-extension'   : [ 1, { extensions: [ '.js', '.jsx' ]}],
+    'implicit-arrow-linebreak'       : 0,
+    'react/jsx-first-prop-new-line'  : 0,
+    'react/jsx-props-no-spreading'   : 0,
+    'react/no-array-index-key'       : 0,
+    'linebreak-style'                : 0,
+    'function-paren-newline'         : 0,
+    'no-underscore-dangle'           : 0,
+    'import/prefer-default-export'   : 0,
+    'import/order'                   : [
+ 'error',
+{
       'newlines-between': 'always',
-      groups: [
-        ['builtin', 'external'],
+      groups            : [
+        [ 'builtin', 'external' ],
         'internal',
-        ['parent', 'sibling', 'index'],
+        [ 'parent',
+'sibling',
+'index' ],
       ],
-    }],
-    'no-multiple-empty-lines': ['error', { max: 1 }],
+    }
+],
+    'no-multiple-empty-lines': [ 'error', { max: 1 }],
   },
 };

@@ -19,6 +19,9 @@ rules:
     }
   }]
   comma-spacing: [error, { before: false, after: true }]
+  comma-dangle: [error, never]
+  indent: [error, tab]
+  no-trailing-spaces: error
   no-array-constructor: error
   max-len: [error, { code: 80 }]
   # --
