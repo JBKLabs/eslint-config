@@ -1,8 +1,18 @@
 rules:
+  # objects
+  no-new-object: error
+  quote-props: [error, as-needed]
+  object-curly-newline: [error, {
+    multiline: true,
+    minProperties: 3
+  }]
+  # --
   array-bracket-newlint: [error, { multiline: true }]
   array-bracket-spacing: [error, always, { 
     singleValue: false,
     objectsInArrays: false,
     arraysInArrays: false
   }]
-  array-element-newline: [error, { multiline: true }]
+  array-element-newline: [error, { multiline: true, minItems: 3 }]
+  # --
+  brace-style: [error, 1tbs, { allowSingleLine: false }]
