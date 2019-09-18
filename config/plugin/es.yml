@@ -1,0 +1,4 @@
+plugins: 
+  - es
+rules:
+  es/no-object-assign: error
