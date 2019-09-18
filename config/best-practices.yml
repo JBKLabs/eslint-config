@@ -23,10 +23,6 @@ rules:
   no-labels: error
   no-lone-blocks: error
   no-loop-func: error
-  no-magic-numbers: [error, {
-    ignore: [1],
-    ignoreArrayIndexes: true
-  }]
   no-multi-spaces: error
   no-multi-str: error
   no-new-wrappers: error
