@@ -1,0 +1,8 @@
+rules:
+  array-bracket-newlint: [error, { multiline: true }]
+  array-bracket-spacing: [error, always, { 
+    singleValue: false,
+    objectsInArrays: false,
+    arraysInArrays: false
+  }]
+  array-element-newline: [error, { multiline: true }]
