@@ -4,8 +4,6 @@ rules:
   quote-props: [error, as-needed]
   no-useless-computed-key: error
   object-curly-newline: [error, { multiline: true }]
-  object-curly-spacing:
-    [error, always, { arraysInObjects: false, objectsInObjects: false }]
   object-property-newline: [error, { allowAllPropertiesOnSameLine: true }]
   key-spacing: [error, { beforeColon: false, afterColon: true, mode: strict }]
   comma-spacing: [error, { before: false, after: true }]
