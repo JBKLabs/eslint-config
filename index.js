@@ -28,12 +28,12 @@ module.exports = {
     './config/variables.yml',
     './config/stylistic.yml',
     './config/plugin/es.yml',
-    ifAnyInstalled(['prettier', '@jbknowledge/dev'])
+    ifAnyInstalled(['prettier', '@jbknowledge/react-dev'])
       ? './config/plugin/prettier.yml'
       : '',
     ifInstalled('react') ? './config/plugin/react.yml' : ''
   ],
-  settings: ifAnyInstalled(['babel-plugin-module-resolver', '@jbknowledge/dev'])
+  settings: ifAnyInstalled(['babel-plugin-module-resolver', '@jbknowledge/react-dev'])
     ? {
       'import/resolver': {
         'babel-module': {
