@@ -5,22 +5,14 @@ const { package: pkg } = readPkgUp.sync({
   cwd: fs.realpathSync(process.cwd())
 });
 
-const includeIfInstalled = (depName, ifTrue, ifFalse) =>
+const ifInstalled = (depName) =>
   [
-    (name) =>
-      pkg.peerDependencies &&
-      (pkg.peerDependencies[name] ||
-        pkg.peerDependencies['@jbknowledge/react-dev']),
-    (name) =>
-      pkg.dependencies &&
-      (pkg.dependencies[name] || pkg.dependencies['@jbknowledge/react-dev']),
-    (name) =>
-      pkg.devDependencies &&
-      (pkg.devDependencies[name] ||
-        pkg.devDependencies['@jbknowledge/react-dev'])
-  ].some((fn) => fn(depName))
-    ? ifTrue
-    : ifFalse;
+    (name) => pkg.peerDependencies && pkg.peerDependencies[name],
+    (name) => pkg.dependencies && pkg.dependencies[name],
+    (name) => pkg.devDependencies && pkg.devDependencies[name]
+  ].some((fn) => fn(depName));
+
+const ifAnyInstalled = (deps) => deps.some((name) => ifInstalled(name));
 
 module.exports = {
   root: true,
@@ -36,12 +28,13 @@ module.exports = {
     './config/variables.yml',
     './config/stylistic.yml',
     './config/plugin/es.yml',
-    includeIfInstalled('prettier', './config/plugin/prettier.yml', ''),
-    includeIfInstalled('react', './config/plugin/react.yml', '')
+    ifAnyInstalled(['prettier', '@jbknowledge/dev'])
+      ? './config/plugin/prettier.yml'
+      : '',
+    ifInstalled('react') ? './config/plugin/react.yml' : ''
   ],
-  settings: includeIfInstalled(
-    'babel-plugin-module-resolver',
-    {
+  settings: ifAnyInstalled(['babel-plugin-module-resolver', '@jbknowledge/dev'])
+    ? {
       'import/resolver': {
         'babel-module': {
           alias: {
@@ -50,9 +43,7 @@ module.exports = {
           }
         }
       }
-    },
-    {}
-  ),
+    } : {},
   plugins: ['import'],
   parser: 'babel-eslint',
   rules: {
