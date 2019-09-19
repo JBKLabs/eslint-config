@@ -10,14 +10,14 @@ const includeIfInstalled = (depName, ifTrue, ifFalse) =>
     (name) =>
       pkg.peerDependencies &&
       (pkg.peerDependencies[name] ||
-        pkg.peerDependencies['@jbknowledge/react-dev']),
+        pkg.peerDependencies['@jbknowledge/dev']),
     (name) =>
       pkg.dependencies &&
-      (pkg.dependencies[name] || pkg.dependencies['@jbknowledge/react-dev']),
+      (pkg.dependencies[name] || pkg.dependencies['@jbknowledge/dev']),
     (name) =>
       pkg.devDependencies &&
       (pkg.devDependencies[name] ||
-        pkg.devDependencies['@jbknowledge/react-dev'])
+        pkg.devDependencies['@jbknowledge/dev'])
   ].some((fn) => fn(depName))
     ? ifTrue
     : ifFalse;
