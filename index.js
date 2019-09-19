@@ -53,10 +53,9 @@ module.exports = {
     },
     {}
   ),
-  plugins: ['jsx-a11y', 'import'],
+  plugins: ['import'],
   parser: 'babel-eslint',
   rules: {
-    'jsx-a11y/media-has-caption': 0,
     'implicit-arrow-linebreak': 0,
     'linebreak-style': 0,
     'function-paren-newline': 0,

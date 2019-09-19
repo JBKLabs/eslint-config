@@ -1,8 +1,12 @@
+extends:
+  - react-app
+  - plugin:jsx-a11y/recommended
 settings:
   react:
     version: detect
 plugins:
   - react
+  - jsx-a11y
 rules:
   react/no-danger: 0
   react/prefer-stateless-function: 0
