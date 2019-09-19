@@ -1,49 +1,59 @@
 {
-  "name": "@jbknowledge/eslint-config",
-  "version": "0.0.7",
-  "description": "JBKnowledge ESLint Configuration",
-  "main": "index.js",
-  "bin": "index.js",
-  "authors": [
-    "Brian Maule (https://github.com/mauleb)",
-    "Josh Hooton (https://github.com/shvagen)"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JBKLabs/eslint-config.git"
-  },
-  "keywords": [
-    "jbknowledge",
-    "eslint"
-  ],
-  "homepage": "https://github.com/JBKLabs/eslint-config",
-  "bugs": {
-    "url": "https://github.com/JBKLabs/eslint-config/issues"
-  },
-  "license": "Apache-2.0",
-  "scripts": {
-    "lint": "eslint ."
-  },
-  "files": [
-    "index.js",
-    "config"
-  ],
-  "dependencies": {
-    "babel-eslint": "10.0.3",
-    "eslint": "6.4.0",
-    "eslint-config-airbnb": "18.0.1",
-    "eslint-config-prettier": "6.3.0",
-    "eslint-import-resolver-babel-module": "5.1.0",
-    "eslint-plugin-es": "2.0.0",
-    "eslint-plugin-import": "2.18.2",
-    "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "3.1.1",
-    "eslint-plugin-react": "7.14.3",
-    "read-pkg-up": "6.0.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "./index.js"
-    ]
-  }
+	"name": "@jbknowledge/eslint-config",
+	"version": "0.0.7",
+	"description": "JBKnowledge ESLint Configuration",
+	"main": "index.js",
+	"bin": "index.js",
+	"authors": [
+		"Brian Maule (https://github.com/mauleb)",
+		"Josh Hooton (https://github.com/shvagen)"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JBKLabs/eslint-config.git"
+	},
+	"keywords": [
+		"jbknowledge",
+		"eslint"
+	],
+	"homepage": "https://github.com/JBKLabs/eslint-config",
+	"bugs": {
+		"url": "https://github.com/JBKLabs/eslint-config/issues"
+	},
+	"license": "Apache-2.0",
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"files": [
+		"index.js",
+		"config"
+	],
+	"dependencies": {
+		"babel-eslint": "10.0.3",
+		"eslint": "6.4.0",
+		"eslint-config-airbnb": "18.0.1",
+		"eslint-config-prettier": "6.3.0",
+		"eslint-import-resolver-babel-module": "5.1.0",
+		"eslint-plugin-es": "2.0.0",
+		"eslint-plugin-import": "2.18.2",
+		"eslint-plugin-jsx-a11y": "6.2.3",
+		"eslint-plugin-prettier": "3.1.1",
+		"eslint-plugin-react": "7.14.3",
+		"read-pkg-up": "6.0.0"
+	},
+	"eslintConfig": {
+		"extends": [
+			"./index.js"
+		]
+	},
+	"prettier": {
+		"singleQuote": true,
+		"semi": true,
+		"tabWidth": 2,
+		"bracketSpacing": true,
+		"arrowParens": "always"
+	},
+	"devDependencies": {
+		"prettier": "^1.18.2"
+	}
 }
