@@ -7,6 +7,7 @@ const { package: pkg } = readPkgUp.sync({
 
 const ifInstalled = (depName) =>
   [
+    (name) => pkg.peerDependencies && pkg.peerDependencies[name],
     (name) => pkg.dependencies && pkg.dependencies[name],
     (name) => pkg.devDependencies && pkg.devDependencies[name]
   ].some((fn) => fn(depName));
