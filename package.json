@@ -1,6 +1,6 @@
 {
   "name": "@jbknowledge/eslint-config",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "description": "JBKnowledge ESLint Configuration",
   "main": "index.js",
   "bin": "index.js",
